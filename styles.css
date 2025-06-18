@@ -5,21 +5,11 @@
   scroll-behavior: smooth;
 }
 
-.custom-navbar {
-
-  background-color: transparent !important;
-
-}
-
-
 .carousel-item img {
   height: 80vh;
   object-fit: cover;
+  width: 100%;
 }
-
-/* .bg-transparent {
-  background-color: rgba(0, 0, 0, 0.4);
-} */
 
 
 .carousel .carousel-indicators [data-bs-target] {
@@ -80,7 +70,7 @@ blockquote {
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-5px) !important;
 }
 
 .chef-img {
@@ -97,7 +87,7 @@ blockquote {
 }
 
 .fade-in-up {
-  animation: fadeInUp 0.6s ease forwards;
+  animation: fadeInUp 3000s ease forwards;
   opacity: 0;
   transform: translateY(30px);
   animation-delay: 0.2s;
@@ -127,6 +117,12 @@ blockquote {
 }
 
 @media (max-width: 767px) {
+    .navbar .container {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 0 1rem !important;
+  }
 
   .custom-navbar .navbar-collapse {
     display: flex;
@@ -142,12 +138,9 @@ blockquote {
 
   .custom-navbar .nav-link {
     color: black !important;
-    font-weight: 600;
+
   }
 
-  body {
-    padding: 20px;
-  }
 
   .contact-nav {
     display: flex !important;
@@ -172,22 +165,67 @@ blockquote {
     margin-top: 0;
 
   }
+body{
+  padding-top: 70px !important;
+   min-height: 200vh;
+}
 
-  .navbar {
-    background-color: white !important;
-  }
 
-  .navbar-scrolled {
-    display: none;
+
+ #main-navbar {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100vw !important;
+  max-width: 100vw;
+  z-index: 10001 !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between !important;
+  padding: 0.5rem 1rem !important;
+  background-color: rgb(105, 18, 18) !important; 
+  overflow: hidden !important;
+  transition: none;  
+}
+
+.navbar-brand{
+  color:white !important;
+}
+  
+
+
+ 
+
+  .navbar-toggler {
+    background-color: #dc3545;
+  margin-left: auto !important;
+  margin-right: 1rem !important;
+    border: none;
+   outline: 2px solid lime !important;
+    border-radius: 0.3rem;
+        position: relative !important;
+
+    z-index: 10000 !important;
   }
+ .carousel,
+.carousel-inner,
+.carousel-item {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+
 
 }
 
-@media (min-width:768px) and (max-width:1024px) {
+@media (min-width:767px) and (max-width:1025px) {
+ 
   .contact-nav {
     position: absolute;
     top: 70px;
-    right: 30px;
+    right: 12
+    0px;
 
   }
 
@@ -197,7 +235,8 @@ blockquote {
 
 }
 
-@media (min-width:768px) {
+@media (min-width:767px) {
+ 
 
   .custom-navbar .navbar-brand,
   .custom-navbar .nav-link {
@@ -217,4 +256,117 @@ blockquote {
 
     font-weight: bolder;
   }
+}
+/* From Uiverse.io by SelfMadeSystem */ 
+/* Yoinked from CodePen, but improved the animation
+so that it is smooth among other more minor things */
+
+.codepen-button {
+  display: block;
+  cursor: pointer;
+  color: white;
+  margin: 0 auto;
+  position: relative;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 6px;
+  overflow: hidden;
+  padding: 3px;
+  isolation: isolate;
+}
+
+.codepen-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 400%;
+  height: 100%;
+  background: linear-gradient(115deg,#4fcf70,#fad648,#a767e5,#12bcfe,#44ce7b);
+  background-size: 25% 100%;
+  animation: an-at-keyframe-css-at-rule-that-translates-via-the-transform-property-the-background-by-negative-25-percent-of-its-width-so-that-it-gives-a-nice-border-animation_-We-use-the-translate-property-to-have-a-nice-transition-so-it_s-not-a-jerk-of-a-start-or-stop .75s linear infinite;
+  animation-play-state: paused;
+  translate: -5% 0%;
+  transition: translate 0.25s ease-out;
+}
+
+.codepen-button:hover::before {
+  animation-play-state: running;
+  transition-duration: 0.75s;
+  translate: 0% 0%;
+}
+
+@keyframes an-at-keyframe-css-at-rule-that-translates-via-the-transform-property-the-background-by-negative-25-percent-of-its-width-so-that-it-gives-a-nice-border-animation_-We-use-the-translate-property-to-have-a-nice-transition-so-it_s-not-a-jerk-of-a-start-or-stop {
+  to {
+    transform: translateX(-25%);
+  }
+}
+
+.codepen-button span {
+  position: relative;
+  display: block;
+  padding: 1rem 1.5rem;
+  font-size: 1.1rem;
+  background: #0a0909;
+  border-radius: 3px;
+  height: 100%;
+  color:white;
+}
+/* From Uiverse.io by alexmaracinaru */ 
+.cta {
+  position: relative;
+  margin: auto;
+  padding: 12px 18px;
+  transition: all 0.2s ease;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.cta:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  border-radius: 50px;
+  background: #b1dae7;
+  width: 45px;
+  height: 45px;
+  transition: all 0.3s ease;
+}
+
+.cta span {
+  position: relative;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #234567;
+}
+
+.cta svg {
+  position: relative;
+  top: 0;
+  margin-left: 10px;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: #234567;
+  stroke-width: 2;
+  transform: translateX(-5px);
+  transition: all 0.3s ease;
+}
+
+.cta:hover:before {
+  width: 100%;
+  background: #b1dae7;
+}
+
+.cta:hover svg {
+  transform: translateX(0);
+}
+
+.cta:active {
+  transform: scale(0.95);
 }
